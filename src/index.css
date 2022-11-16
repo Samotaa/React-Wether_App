@@ -1,13 +1,132 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.app{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  color: white;
+  overflow: hidden;
+
+}
+
+
+
+.app:before{
+  content: '';
+  background: url('https://www.nasa.gov/sites/default/files/thumbnails/image/smap-weather.jpg') no-repeat center center/cover;
+  position: absolute;
+  width: 100%;
+  height:  100%;
+  top: 0;
+  left:0;
+  z-index: -1;
+}
+
+.search{
+  text-align: center;
+  padding: 1rem; 
+}
+
+
+
+::placeholder{
+  color: black;
+}
+
+.app input{
+  text-align: center;
+  padding: .7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  
+  color: rgb(0, 0, 0);
+  background-color: rgba(174, 209, 201, 0.8);
+}
+
+
+@media (max-width: 1920px) { 
+ 
+.container{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, 50% 45%);
+  text-align: center;
+  margin-top: 10%;
+  max-height: 700px;
+  text-shadow: 4px 2px black;
+}
+
+.temp{
+  font-size: 24px;
+}
+.location{
+  display: grid;
+}
+
+.bottom{
+  font-size: 24px;
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr);
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(244,244,244, 0.2);
+  border-radius: 20px;
+
+}
+
+.locationName{
+  font-size: 64px;
+}
+}
+
+
+@media (max-width: 700px) { 
+  .container{
+    font-size: 64px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
+  .bottom{
+    margin-top: 5%;
+    display: grid;
+    grid-template-rows: minmax(120px, 160px);
+    grid-auto-flow: column;
+    margin: 5%;
+    
+
+  }
+
+  
+}
+
+@media (max-width: 300px) { 
+  .app input{
+    text-align: center;
+    padding: .1rem 0.5rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    
+    color: white;
+    background-color: rgb(144, 175, 168, 0.8);
+  }
+  
 }
